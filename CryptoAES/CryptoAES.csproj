@@ -7,13 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="eye.png" />
-    <None Remove="hidden.png" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Resource Include="eye.png" />
-    <Resource Include="hidden.png" />
+    <PackageReference Include="Ookii.Dialogs" Version="5.0.1" />
   </ItemGroup>
 
 </Project>

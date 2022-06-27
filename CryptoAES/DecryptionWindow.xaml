@@ -13,20 +13,29 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <PasswordBox HorizontalAlignment="Left" Margin="325,219,0,0" VerticalAlignment="Top" Width="192" Height="31" FontFamily="Arial" FontSize="16"/>
-        <Label Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="229,217,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.002" Height="35" Width="95" FontFamily="Arial" FontSize="16"/>
+        <StackPanel Orientation="Horizontal" Margin="251,186,209,189">
+            <Grid Width="293" Height="31">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="19*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="23*"/>
+                    <ColumnDefinition Width="52*"/>
+                </Grid.ColumnDefinitions>
+                <PasswordBox Name="passwordBox" PasswordChar="*" Grid.ColumnSpan="2" FontSize="14" FontFamily="Arial" />
+                <TextBox Name="passwordTxtBox" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            </Grid>
+            <CheckBox Margin="10" Name="showPassword" Unchecked="ShowPassword_Unchecked"  Checked="ShowPassword_Checked" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Label x:Name="password_lable" Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="156,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.002" Height="35" Width="95" FontFamily="Arial" FontSize="16"/>
         <Label Content="Decryption&#xD;&#xA;" HorizontalAlignment="Left" Margin="336,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.002" FontFamily="Arial" FontSize="24"/>
-        <Image HorizontalAlignment="Left" Height="100" Margin="98,0,0,0" VerticalAlignment="Center" Width="100"/>
         <Button x:Name="browes" Content="Browse file" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Click="browes_Click" Height="30" Width="100"/>
-        <Button Content="Start Decryption" HorizontalAlignment="Center" Margin="0,316,0,0" VerticalAlignment="Top" Height="52" Width="146"/>
-        <Label x:Name="ErrorMessage" Content="ErrorMessage" HorizontalAlignment="Left" Margin="139,263,0,0" VerticalAlignment="Top" Width="546" Foreground="#FFF70000" Height="47"/>
-        <Button x:Name="Openfolder" Content="Open Decrypted Folder" HorizontalAlignment="Center" Margin="0,385,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.638" Height="36" Width="156" Click="Openfolder_Click"/>
+        <Button x:Name="StartDecryption" Content="Start Decryption" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="52" Width="146" FontFamily="Arial" FontSize="16" Click="StartDecryption_Click"/>
+        <Label x:Name="ErrorMessage" Content="ErrorMessage" HorizontalAlignment="Left" Margin="139,236,0,0" VerticalAlignment="Top" Width="546" Foreground="#FFF70000" Height="47"/>
+        <Button x:Name="Openfolder" Content="Open Decrypted Folder" HorizontalAlignment="Left" Margin="614,370,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.638" Height="54" Width="156" Click="Openfolder_Click"/>
         <Label x:Name="File_Address" Content="File Address" HorizontalAlignment="Left" Margin="219,140,0,0" VerticalAlignment="Top" Width="349" Height="72"/>
-        <Button x:Name="showpassword" Content="" HorizontalAlignment="Left" Margin="523,219,0,0" VerticalAlignment="Top" Height="29" Width="28" BorderBrush="{x:Null}" Click="showpassword_Click">
-            <Button.Background>
-                <ImageBrush ImageSource="C:\Users\Usama\source\repos\CryptoAES\CryptoAES\img\eye.png"/>
-            </Button.Background>
-        </Button>
-
+        <Label x:Name="Save_File_Address" Content="File Address" HorizontalAlignment="Left" Margin="216,375,0,0" VerticalAlignment="Top" Width="348" Height="49"/>
+        <Button x:Name="home" Content="home" HorizontalAlignment="Left" Margin="49,390,0,0" VerticalAlignment="Top" Click="home_Click"/>
     </Grid>
 </Window>

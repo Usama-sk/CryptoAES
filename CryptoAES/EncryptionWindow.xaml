@@ -14,8 +14,31 @@
             </LinearGradientBrush>
         </Grid.Background>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="521*"/>
-            <ColumnDefinition Width="280*"/>
+            <ColumnDefinition/>
         </Grid.ColumnDefinitions>
+        <StackPanel Orientation="Horizontal" Margin="251,186,217,189">
+            <Grid Width="293" Height="31">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="19*"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="23*"/>
+                    <ColumnDefinition Width="52*"/>
+                </Grid.ColumnDefinitions>
+                <PasswordBox x:Name="passwordBox" PasswordChar="*" Grid.ColumnSpan="2" FontSize="14" FontFamily="Arial" />
+                <TextBox x:Name="passwordTxtBox" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2" />
+            </Grid>
+            <CheckBox Margin="10" x:Name="showPassword" Unchecked="ShowPassword_Unchecked"  Checked="ShowPassword_Checked" VerticalAlignment="Center"/>
+        </StackPanel>
+        <Label x:Name="password_lable" Content="Password&#xA;" HorizontalAlignment="Left" Margin="156,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.002" Height="35" Width="95" FontFamily="Arial" FontSize="16"/>
+        <Label x:Name="titleencryption" Content="Encryption&#xA;" HorizontalAlignment="Left" Margin="336,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.002" FontFamily="Arial" FontSize="24"/>
+        <Image HorizontalAlignment="Left" Height="100" Margin="98,0,0,0" VerticalAlignment="Center" Width="100"/>
+        <Button x:Name="browes" Content="Browse file" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Click="browes_Click" Height="30" Width="100"/>
+        <Label x:Name="ErrorMessage" Content="ErrorMessage" HorizontalAlignment="Left" Margin="139,236,0,0" VerticalAlignment="Top" Width="546" Foreground="#FFF70000" Height="47"/>
+        <Label x:Name="File_Address" Content="File Address" HorizontalAlignment="Left" Margin="219,140,0,0" VerticalAlignment="Top" Width="349" Height="72"/>
+        <Label Content="show password&#xA;" Margin="572,203,117,207"/>
+        <Button x:Name="StartEncryption" Content="Start Encryption" HorizontalAlignment="Left" Margin="350,283,0,0" VerticalAlignment="Top" Height="71" Width="138" Click="StartEncryption_Click_1"/>
+        <Button x:Name="Home" Content="Home" HorizontalAlignment="Left" Margin="242,391,0,0" VerticalAlignment="Top" Click="Home_Click"/>
     </Grid>
 </Window>
