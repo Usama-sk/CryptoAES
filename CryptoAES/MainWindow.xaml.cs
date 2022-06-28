@@ -37,14 +37,6 @@ namespace CryptoAES
 
         }
 
-        private void Decryptbutton_Click(object sender, RoutedEventArgs e)
-        {
-            DecryptionWindow decrypt = new DecryptionWindow();
-            Close();
-            decrypt.Show();
-
-        }
-
 
         public static byte[] AES_Decrypt(byte[] bytesToBeDecrypted, byte[] passwordBytes)
         {
@@ -80,10 +72,10 @@ namespace CryptoAES
         }
 
 
-        public static string ValidatePassword(string password, out string ErrorMessage)
+        public static string ValidatePassword(string password)
         {
          var input = password;
-            ErrorMessage = string.Empty;
+            string ErrorMessage = "";
 
             if (string.IsNullOrWhiteSpace(input))
             {
@@ -160,5 +152,13 @@ namespace CryptoAES
             return encryptedBytes;
         }
 
+        private void Decryptbutton_Click(object sender, RoutedEventArgs e)
+        {
+            DecryptionWindow decrypt = new DecryptionWindow();
+            Close();
+            decrypt.Show();
+        }
+
+       
     }
 }

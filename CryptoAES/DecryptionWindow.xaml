@@ -13,29 +13,16 @@
         </LinearGradientBrush>
     </Window.Background>
     <Grid>
-        <StackPanel Orientation="Horizontal" Margin="251,186,209,189">
-            <Grid Width="293" Height="31">
-                <Grid.RowDefinitions>
-                    <RowDefinition Height="19*"/>
-                    <RowDefinition/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="23*"/>
-                    <ColumnDefinition Width="52*"/>
-                </Grid.ColumnDefinitions>
-                <PasswordBox Name="passwordBox" PasswordChar="*" Grid.ColumnSpan="2" FontSize="14" FontFamily="Arial" />
-                <TextBox Name="passwordTxtBox" Visibility="Collapsed" Grid.ColumnSpan="2" Grid.RowSpan="2" />
-            </Grid>
-            <CheckBox Margin="10" Name="showPassword" Unchecked="ShowPassword_Unchecked"  Checked="ShowPassword_Checked" VerticalAlignment="Center"/>
-        </StackPanel>
-        <Label x:Name="password_lable" Content="Password&#xD;&#xA;" HorizontalAlignment="Left" Margin="156,0,0,0" VerticalAlignment="Center" RenderTransformOrigin="0.513,0.002" Height="35" Width="95" FontFamily="Arial" FontSize="16"/>
-        <Label Content="Decryption&#xD;&#xA;" HorizontalAlignment="Left" Margin="336,53,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.002" FontFamily="Arial" FontSize="24"/>
-        <Button x:Name="browes" Content="Browse file" HorizontalAlignment="Center" Margin="0,104,0,0" VerticalAlignment="Top" Click="browes_Click" Height="30" Width="100"/>
-        <Button x:Name="StartDecryption" Content="Start Decryption" HorizontalAlignment="Center" Margin="0,281,0,0" VerticalAlignment="Top" Height="52" Width="146" FontFamily="Arial" FontSize="16" Click="StartDecryption_Click"/>
-        <Label x:Name="ErrorMessage" Content="ErrorMessage" HorizontalAlignment="Left" Margin="139,236,0,0" VerticalAlignment="Top" Width="546" Foreground="#FFF70000" Height="47"/>
-        <Button x:Name="Openfolder" Content="Open Decrypted Folder" HorizontalAlignment="Left" Margin="614,370,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.52,0.638" Height="54" Width="156" Click="Openfolder_Click"/>
-        <Label x:Name="File_Address" Content="File Address" HorizontalAlignment="Left" Margin="219,140,0,0" VerticalAlignment="Top" Width="349" Height="72"/>
-        <Label x:Name="Save_File_Address" Content="File Address" HorizontalAlignment="Left" Margin="216,375,0,0" VerticalAlignment="Top" Width="348" Height="49"/>
-        <Button x:Name="home" Content="home" HorizontalAlignment="Left" Margin="49,390,0,0" VerticalAlignment="Top" Click="home_Click"/>
+        <Grid HorizontalAlignment="Center" Height="146" Margin="0,49,0,0" VerticalAlignment="Top" Width="442">
+            <Label Content="Decryption&#xA;" HorizontalAlignment="Center" VerticalAlignment="Top" RenderTransformOrigin="0.513,0.002" FontFamily="Arial" FontSize="24" Height="50"/>
+            <StackPanel HorizontalAlignment="Center" Margin="0,55,0,0" Orientation="Vertical" VerticalAlignment="Top" Height="91">
+                <Button x:Name="browes" Content="Browse file" Click="browes_Click" Height="30" Width="100" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+                <Label x:Name="File_Address" Content="File Address" Width="349" Height="62" HorizontalAlignment="Center"/>
+            </StackPanel>
+        </Grid>
+        <Grid HorizontalAlignment="Center" Height="141" VerticalAlignment="Top" Width="884" Margin="10,170,0,0">
+            <Button x:Name="StartDecryption" Content="Start Decryption" HorizontalAlignment="Left" Margin="430,56,0,0" VerticalAlignment="Top" Height="52" Width="140" FontFamily="Arial" FontSize="16" Click="StartDecryption_Click" FontWeight="Bold"/>
+            <Button x:Name="home" Content="Home" HorizontalAlignment="Left" Margin="226,56,0,0" VerticalAlignment="Top" Click="home_Click" Height="52" Width="133" FontFamily="Arial" FontSize="16" FontWeight="Bold"/>
+        </Grid>
     </Grid>
 </Window>

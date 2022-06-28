@@ -15,17 +15,17 @@ using Ookii.Dialogs.Wpf;
 
 namespace CryptoAES
 {
-    /// <summary>
-    /// Interaction logic for DecryptionWindow.xaml
-    /// </summary>
+   
+   
     public partial class DecryptionWindow : Window
     {
+ 
         public DecryptionWindow()
         {
             
             InitializeComponent();
             File_Address.Visibility = Visibility.Hidden;
-            ErrorMessage.Visibility = Visibility.Hidden;
+       
             Openfolder.Visibility = Visibility.Hidden;
         }
 
@@ -48,43 +48,14 @@ namespace CryptoAES
             }
         }
 
-        private void Openfolder_Click(object sender, RoutedEventArgs e)
-        {
-            string folderPath = @"C:\Users\Usama\Documents\Crypto AES\Decrypted File";
-            if (Directory.Exists(folderPath))
-            {
-                ProcessStartInfo startInfo = new ProcessStartInfo
-                {
-                    Arguments = folderPath
-                };
-                Process.Start(startInfo);
-            }
-            else
-            {
-                MessageBox.Show(string.Format("{0} Directory does not exist!", folderPath));
-            }
-        }
 
-
-        private void ShowPassword_Checked(object sender, RoutedEventArgs e)
-        {
-            passwordTxtBox.Text = passwordBox.Password;
-            passwordBox.Visibility = Visibility.Collapsed;
-            passwordTxtBox.Visibility = Visibility.Visible;
-        }
-
-        private void ShowPassword_Unchecked(object sender, RoutedEventArgs e)
-            {
-                passwordBox.Password = passwordTxtBox.Text;
-                passwordTxtBox.Visibility = Visibility.Collapsed;
-                passwordBox.Visibility = Visibility.Visible;
-            }
-
+        
         private void StartDecryption_Click(object sender, RoutedEventArgs e)
         {
 
             string fileEncrypted = File_Address.Content.ToString();
-            string password = passwordTxtBox.Text;
+            string password = "Usama@123";
+            string validation = MainWindow.ValidatePassword(password);
             if (!File.Exists(fileEncrypted))
             {
                 MessageBox.Show("File does not exist.");
@@ -95,6 +66,7 @@ namespace CryptoAES
                 MessageBox.Show("Password empty. please enter your password.");
                 return;
             }
+         
             try
             {
                 byte[] bytesToBeDecrypted = File.ReadAllBytes(fileEncrypted);
@@ -103,7 +75,7 @@ namespace CryptoAES
 
                 byte[] bytesDecrypted = MainWindow.AES_Decrypt(bytesToBeDecrypted, passwordBytes);
 
-                string file = Save_File_Address.Content.ToString();
+                string file = File_Address.Content.ToString();
                 file = Path.GetExtension(file);
                 SaveFileDialog sd = new SaveFileDialog();
                 sd.Filter = "Files (*" + file + ")|*" + file;
@@ -114,6 +86,7 @@ namespace CryptoAES
                 }
                 File_Address.Content = "";
                 File_Address.Visibility = Visibility.Hidden;
+                Openfolder.Visibility = Visibility.Visible;
             }
             catch
             {

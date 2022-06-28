@@ -13,25 +13,27 @@
             <GradientStop Color="#FF5C84C7" Offset="0.597"/>
         </LinearGradientBrush>
     </Window.Background>
-    <Grid>
-        <Label x:Name="Title" Content="Welcome to&#xD;&#xA;Crypto AES Encryption and Decryption Softaware" HorizontalAlignment="Center" Margin="0,88,0,0" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" FontFamily="Arial" HorizontalContentAlignment="Center" VerticalContentAlignment="Top" ScrollViewer.HorizontalScrollBarVisibility="Disabled"/>
-        <Button x:Name="Encryptbutton" Content="Encryption" HorizontalAlignment="Left" Margin="294,251,0,0" VerticalAlignment="Top" Height="60" Width="100" Click="Encryptbutton_Click">
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FFD86B20" Offset="0.4"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Button x:Name="Decryptbutton" Content="Decryption" HorizontalAlignment="Left" Margin="435,252,0,122" Width="100" Click="Decryptbutton_Click" Height="60"  >
-            <Button.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF5FB425" Offset="0"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Button.Background>
-        </Button>
-        <Label x:Name="subtitle" Content="Select the Option&#xD;&#xA;" HorizontalAlignment="Left" VerticalAlignment="Center" FontSize="25" FontWeight="Bold" FontFamily="Arial" Margin="304,0,0,0"/>
+    <Grid VerticalAlignment="Top" Margin="0,18,0,0">
+        <Grid Margin="0,128,0,0" HorizontalAlignment="Center" VerticalAlignment="Top" Width="340">
+            <Label x:Name="subtitle_Copy" Content="Select the Option&#xA;" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="25" FontWeight="Bold" FontFamily="Arial" Height="46" Margin="66,31,0,0"/>
+            <Button x:Name="Encryptbutton_Copy" Content="Encryption" HorizontalAlignment="Left" Margin="30,111,0,0" VerticalAlignment="Top" Height="60" Width="114" Click="Encryptbutton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFD86B20" Offset="0.4"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button x:Name="Decryptbutton" Content="Decryption" HorizontalAlignment="Left" Margin="194,109,0,0" VerticalAlignment="Top" Height="62" Width="114" Click="Decryptbutton_Click">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FF4AC113"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+        </Grid>
+        <Label Content="Welcome to&#xA;Crypto AES Encryption and Decryption Softaware" HorizontalAlignment="Center" Margin="0,61,0,0" VerticalAlignment="Top" Width="676" HorizontalContentAlignment="Center" FontFamily="Arial" FontSize="25" FontWeight="Bold"/>
 
     </Grid>
 </Window>
